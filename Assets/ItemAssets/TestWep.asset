@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: TestWeapon
   stats:
-    power: 0
-    critical: 0
+    power: 3
+    critical: 1
     stamina: 0
     speed: 0
   itemRarity: 0
-  shootablePoint: {x: 0, y: 0.1}
-  shootsPerSecond: 10
+  shootablePoint: {x: 0, y: 0}
+  shootsPerSecond: 1
   bullet: {fileID: 7886735446319860613, guid: ad5bb934ff5c6274db9ca448755d7d9e, type: 3}

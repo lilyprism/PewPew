@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IHitable
 {
 	[SerializeField] private int health = 100;
 
@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
 			Die();
 	}
 
-	protected virtual void Die()
+	public virtual void Die()
 	{
 		Destroy(gameObject);
 	}

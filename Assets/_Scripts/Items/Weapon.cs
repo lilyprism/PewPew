@@ -20,7 +20,8 @@ public class Weapon : Item
 		obj.transform.localPosition = shootablePoint;
 
 		var bulletScript = obj.GetComponent<Bullet>();
-		bulletScript.OnShootStart(this);
+		bulletScript.damage = TrueDamage();
+		bulletScript.OnShootStart();
 	}
 
 	public int TrueDamage()

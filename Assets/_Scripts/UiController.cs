@@ -7,16 +7,24 @@ using UnityEngine.UI;
 public class UiController : MonoBehaviour
 {
 	[SerializeField] private NavClass ship;
-	[SerializeField] private Slider   healthSlider;
+	[SerializeField] public Slider   bossSlider;
 
-	private void Start()
+	private static UiController _instance;
+
+	public static UiController Instance
 	{
-		if (healthSlider && ship)
-			healthSlider.maxValue = ship.TrueMaxHealth();
+		get { return _instance; }
 	}
 
-	private void Update()
+	private void Awake()
 	{
-		healthSlider.value = ship.health;
+		if (_instance != null && _instance != this)
+		{
+			Destroy(this.gameObject);
+		}
+		else
+		{
+			_instance = this;
+		}
 	}
 }
